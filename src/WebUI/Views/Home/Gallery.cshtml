@@ -1,0 +1,43 @@
+@model IEnumerable<Bootstrap.WebUI.Models.ImageModel>
+@{
+    ViewData["Title"] = "Gallery";
+    var i = 0;
+}
+
+<div class="row">
+@foreach (var item in Model)
+{
+    i++;
+    <a href="@Html.DisplayFor(modelItem => item.HighRes)" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+		<img src="@Html.DisplayFor(modelItem => item.LowRes)" class="img-fluid">
+	</a>
+    if(i%3==0)
+    {
+        @:</div>
+        @:<div class="row">
+    }
+}
+</div>
+
+@* <div class="row">
+	<a href="/images/251-600x600.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+		<img src="/images/251-600x600.jpg" class="img-fluid">
+	</a>
+	<a href="/images/252-600x600.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+		<img src="/images/252-600x600.jpg" class="img-fluid">
+	</a>
+	<a href="/images/253-600x600.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+		<img src="/images/253-600x600.jpg" class="img-fluid">
+	</a>
+</div>
+<div class="row">
+	<a href="/images/254-600x600.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+		<img src="/images/254-600x600.jpg" class="img-fluid">
+	</a>
+	<a href="/images/255-600x600.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+		<img src="/images/255-600x600.jpg" class="img-fluid">
+	</a>
+	<a href="/images/256-600x600.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+		<img src="/images/256-600x600.jpg" class="img-fluid">
+	</a>
+</div> *@
